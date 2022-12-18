@@ -7,6 +7,14 @@ import MainHeader from './components/MainHeader/MainHeader';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const loginState = localStorage.getItem('isLoggedIn');
+
+  if (loginState === '1') {
+    setIsLoggedIn(true);
+  } else {
+    setIsLoggedIn(false);
+  }
+
   const loginHandler = (email, password) => {
     // We should of course check email and password
     // But it's just a dummy/ demo anyways
